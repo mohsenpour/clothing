@@ -13,35 +13,35 @@ class Directory extends Component {
           imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
           size: 'small',
           id: 1,
-          linkUrl: 'shop/hats'
+          linkUrl: 'hats'
         },
         {
           title: 'JACKETS',
           imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
           size: 'small',
           id: 2,
-          linkUrl: 'shop/jackets'
+          linkUrl: ''
         },
         {
           title: 'SNEAKERS',
           imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
           size: 'small',
           id: 3,
-          linkUrl: 'shop/sneakers'
+          linkUrl: ''
         },
         {
           title: 'WOMENS',
           imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
           size: 'large',
           id: 4,
-          linkUrl: 'shop/womens'
+          linkUrl: ''
         },
         {
           title: 'MENS',
           imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
           size: 'large',
           id: 5,
-          linkUrl: 'shop/mens'
+          linkUrl: ''
         }
       ]
     }
@@ -51,8 +51,8 @@ class Directory extends Component {
     return (
       <div className="directoryMenu">
         {
-          this.state.sections.map(({ title, imageUrl, id, size }) => (
-            <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+          this.state.sections.map(({ id, ...otherProps }) => (
+            <MenuItem key={id} {...otherProps} />
           ))
         }
       </div>
