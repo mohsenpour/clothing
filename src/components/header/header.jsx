@@ -6,7 +6,7 @@ import Cart from '../cart/cart';
 import CartDropDown from '../cartDropDown/cartDropDown';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../redux/user/userSelectors';
-import { selectCartHidden } from '../../redux/cart/cardSelectors';
+import { selectCartHidden } from '../../redux/cart/cartSelectors';
 import { ReactComponent as Logo } from './../../assets/crown.svg';
 import './header.scss'
 
