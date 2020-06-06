@@ -11,10 +11,10 @@ export const selectShopCollections = createSelector(
 // Selector to convert collections object into an array for use in CollectionOverview
 export const selectCollectionsForPreview = createSelector(
   [selectShopCollections],
-  (collections) => Object.values(collections))
+  (collections) => collections ? Object.values(collections) : [])
 
 
 // Selector to retrive the items inside the collection to show on shop/{collection} page
 export const selectCollection = collectionUrlParam =>
   createSelector([selectShopCollections],
-    collections => collections[collectionUrlParam])
+    collections => collections ? collections[collectionUrlParam] : null)
