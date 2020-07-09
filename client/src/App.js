@@ -17,16 +17,12 @@ import './App.css';
 
 class App extends Component {
 
-  unsubscribeFromAuth = null;
 
   componentDidMount() {
     const { checkUserSession } = this.props;
     checkUserSession();
   }
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
 
   render() {
     return (
@@ -39,7 +35,7 @@ class App extends Component {
           <Route exact path='/signin' render={() => this.props.currentUser ? <Redirect to='/' /> : <SignInPage />} />
 
         </Switch>
-      </div>
+      </div >
     );
   }
 }

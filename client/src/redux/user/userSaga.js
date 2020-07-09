@@ -18,6 +18,7 @@ export function* signInWithGoogle() {
   try {
     const { user } = yield auth.signInWithPopup(googleProvider);
     yield getSnapshotFromUserAuth(user);
+    window.location.reload(false);
   } catch (error) {
     yield put(signInFailure(error));
   }
