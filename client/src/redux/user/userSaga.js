@@ -18,7 +18,7 @@ export function* signInWithGoogle() {
   try {
     const { user } = yield auth.signInWithPopup(googleProvider);
     yield getSnapshotFromUserAuth(user);
-    window.location.reload(false);
+    document.location.href = "/";
   } catch (error) {
     yield put(signInFailure(error));
   }
